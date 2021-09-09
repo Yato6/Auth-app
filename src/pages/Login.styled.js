@@ -1,0 +1,133 @@
+import styled from "styled-components";
+
+export const Wrapper = styled.div`
+  background-color: ${({ change }) => (change ? "#191919" : "#34495e")};
+  width: 100vw;
+  height: 100vh;
+`;
+
+export const FormBox = styled.form`
+  font-family: sans-serif;
+  width: 95.4vw;
+  padding: 40px;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  background: #191919;
+  text-align: center;
+
+  @media screen and (min-height: 812px) and (max-width: 375px) {
+    width: 295px;
+  }
+
+  p {
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    left: 42vw;
+    top: 39vh;
+
+    @media screen and (min-height: 812px) and (max-width: 375px) {
+    left: 15vw;
+      top: 43vh;
+  }
+  }
+
+  h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  h2 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    width: 280px;
+    border-color: #2ecc71;
+  }
+
+  input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #cc2e9d;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background: #cc2e9d;
+  }
+`;
+
+export const Switch = styled.div`
+  position: absolute;
+  top: 7.5vh;
+  left: 53.5vw;
+
+  @media screen and (min-height: 812px) and (max-width: 375px) {
+    left: 66vw;
+    top: 8vh;
+  }
+  
+
+  input[type="checkbox"] {
+    position: relative;
+    width: 60px;
+    height: 20px;
+    -webkit-appearance: none;
+    outline: none;
+    background: #636363;
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+
+  input:checked[type="checkbox"] {
+    background: #3a5070;
+  }
+
+  input[type="checkbox"]:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: scale(1.1);
+    border-radius: 50%;
+    background: #d1d1d1;
+    left: 0;
+    transition: 0.5s;
+  }
+
+  input:checked[type="checkbox"]:before {
+    background: #5386d4;
+    left: 42px;
+  }
+`;
