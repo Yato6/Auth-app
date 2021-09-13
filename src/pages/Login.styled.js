@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const FormBox = styled.form`
-  font-family: sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   width: 95.4vw;
   padding: 40px;
   position: absolute;
@@ -23,15 +23,21 @@ export const FormBox = styled.form`
 
   p {
     color: white;
+    font-size: small;
     font-weight: 500;
     position: absolute;
-    left: 42vw;
-    top: 39vh;
+    left: 56vw;
+    top: 4vh;
 
     @media screen and (min-height: 812px) and (max-width: 375px) {
     left: 15vw;
       top: 43vh;
   }
+  }
+
+  i {
+    color: white;
+    font-weight: 500;
   }
 
   h1 {
@@ -101,7 +107,7 @@ export const Switch = styled.div`
 
   input[type="checkbox"] {
     position: relative;
-    width: 60px;
+    width: 50px;
     height: 20px;
     -webkit-appearance: none;
     outline: none;
@@ -115,6 +121,7 @@ export const Switch = styled.div`
   }
 
   input[type="checkbox"]:before {
+    cursor: pointer;
     content: "";
     position: absolute;
     width: 20px;
@@ -127,7 +134,8 @@ export const Switch = styled.div`
   }
 
   input:checked[type="checkbox"]:before {
+    cursor: pointer;
     background: #5386d4;
-    left: 42px;
+    left: 29px;
   }
 `;

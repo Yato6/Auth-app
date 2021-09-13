@@ -2,10 +2,10 @@ import { Switch, Route, Redirect } from 'react-router';
 import { privateRoutes, publicRoutes, RouteNames } from '../router';
 
 const AppRouter = () => {
-   const auth = false
+    const isAuth = false
 
     return (
-        auth
+        isAuth
         ?
         <Switch>
             {privateRoutes.map(route => 

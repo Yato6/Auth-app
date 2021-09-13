@@ -8,8 +8,15 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+     if (data.userName === "Vlad" && data.password === "123") {
+      alert("Здравствуйте, Владислав!");
+    } 
+  };
+
+
   const [change, setChange] = useState(false);
+  
 
 
   return (
@@ -31,18 +38,14 @@ const Login = () => {
         <h1>Login</h1>
         <h2>Авторизация</h2>
         <input
-          {...register("firstName")}
-          required
+          {...register("userName", {required: true})}
           type="text"
           placeholder="Имя пользователя"
-        ></input>
-        <input
-          {...register("Password")}
-          required
-          type="password"
-          placeholder="Пароль"
-        ></input>
-        {errors.exampleRequired && console.log(" This field is required")}
+        />
+        {errors.userName && <i>Введите имя пользователя!</i>}
+
+        <input {...register("password", {required: true})} type="password" placeholder="Пароль" />
+        {errors.password && <i>Введите пароль!</i>}
         <input type="submit" value="Войти"></input>
       </FormBox>
     </Wrapper>
