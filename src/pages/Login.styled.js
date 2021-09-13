@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const FormBox = styled.form`
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   width: 95.4vw;
   padding: 40px;
   position: absolute;
@@ -30,13 +30,22 @@ export const FormBox = styled.form`
     top: 4vh;
 
     @media screen and (min-height: 812px) and (max-width: 375px) {
-    left: 15vw;
+      left: 15vw;
       top: 43vh;
+    }
   }
+
+  span {
+    position: absolute;
+    font-weight: 500;
+    left: 60.5vw;
+    top: 4.4vh;
+    color: red;
+    font-size: small;
   }
 
   i {
-    color: white;
+    color: #610808;
     font-weight: 500;
   }
 
@@ -64,14 +73,14 @@ export const FormBox = styled.form`
     width: 200px;
     outline: none;
     color: white;
-    border-radius: 24px;
+    border-radius: 6px;
     transition: 0.25s;
   }
 
   input[type="text"]:focus,
   input[type="password"]:focus {
-    width: 280px;
-    border-color: #2ecc71;
+    width: 240px;
+    border-color: #a4a4a4;
   }
 
   input[type="submit"] {
@@ -80,17 +89,16 @@ export const FormBox = styled.form`
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #cc2e9d;
+    border: 1px solid #a93167;
     padding: 14px 40px;
     outline: none;
     color: white;
-    border-radius: 24px;
     transition: 0.25s;
     cursor: pointer;
   }
 
   input[type="submit"]:hover {
-    background: #cc2e9d;
+    background: #a93167;
   }
 `;
 
@@ -103,7 +111,6 @@ export const Switch = styled.div`
     left: 66vw;
     top: 8vh;
   }
-  
 
   input[type="checkbox"] {
     position: relative;
