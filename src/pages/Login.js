@@ -1,20 +1,28 @@
+import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Redirect } from "react-router";
-import { RouteNames } from "../router";
 import { FormBox, Switch, Wrapper } from "./Login.styled";
-
+import Account from "./Account";
 const Login = () => {
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
-    if (data.userName === "Vlad" && data.password === "123") {
-      alert("Здравствуйте, Владислав!");
-    } else {
-    }
+    axios
+     .get('./users.json').then((res) => {
+      if (data.userName === "Vlad" && data.password === "123") {
+      } else {
+        alert ('Такого пользователья не существует!')
+      }
+      if (!handleSubmit) {
+      return <Redirect to={"/Login"} />
+      }
+     })
   };
 
   const [change, setChange] = useState(false);
@@ -37,7 +45,7 @@ const Login = () => {
           ></input>
         </Switch>
         <h1>Login</h1>
-        <h2 change={change}>Авторизация</h2>
+        <h2>Авторизация</h2>
         <input
           {...register("userName", { required: true })}
           type="text"

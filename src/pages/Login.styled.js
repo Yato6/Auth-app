@@ -30,8 +30,9 @@ export const FormBox = styled.form`
     top: 4vh;
 
     @media screen and (min-height: 812px) and (max-width: 375px) {
-      left: 15vw;
-      top: 43vh;
+      left: 75vw;
+      top: 4vh;
+    
     }
   }
 
@@ -42,6 +43,11 @@ export const FormBox = styled.form`
     top: 4.4vh;
     color: red;
     font-size: small;
+
+    @media screen and (min-height: 812px) and (max-width: 375px) {
+      left: 87vw;
+      top: 4vh;
+    }
   }
 
   i {
