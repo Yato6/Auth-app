@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Redirect } from "react-router";
+import { logIn } from "../Components/History";
 import { FormBox, Switch, Wrapper } from "./Login.styled";
-import Account from "./Account";
 const Login = () => {
-
   const {
     register,
     handleSubmit,
@@ -13,16 +11,16 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    axios
-     .get('./users.json').then((res) => {
-      if (data.userName === "Vlad" && data.password === "123") {
+    axios.get("./users.json").then((res) => {
+      if (
+        data.username === res.data[0].login &&
+        data.password === res.data[0].password
+      ) {
+        logIn();
       } else {
-        alert ('Такого пользователья не существует!')
+        alert("Такого пользователя, не существует");
       }
-      if (!handleSubmit) {
-      return <Redirect to={"/Login"} />
-      }
-     })
+    });
   };
 
   const [change, setChange] = useState(false);
@@ -47,11 +45,11 @@ const Login = () => {
         <h1>Login</h1>
         <h2>Авторизация</h2>
         <input
-          {...register("userName", { required: true })}
+          {...register("username", { required: true }, { RegExp: /@/ })}
           type="text"
           placeholder="Имя пользователя"
         />
-        {errors.userName && <i>Введите имя пользователя!</i>}
+        {errors.username && <i>Введите имя пользователя!</i>}
 
         <input
           {...register("password", { required: true })}

@@ -32,7 +32,6 @@ export const FormBox = styled.form`
     @media screen and (min-height: 812px) and (max-width: 375px) {
       left: 75vw;
       top: 4vh;
-    
     }
   }
 
