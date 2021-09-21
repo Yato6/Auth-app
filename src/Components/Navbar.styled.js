@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const Navigation = styled.nav`
   background-color: black;
 
-
   ul {
     display: flex;
     list-style: none;
     color: #fff;
     margin-top: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
 
     /* @media screen and (min-height: 812px) and (max-width: 375px) {
       padding: 0;

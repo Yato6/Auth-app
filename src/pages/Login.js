@@ -26,7 +26,6 @@ const Login = () => {
   const [change, setChange] = useState(false);
 
   return (
-    
     <Wrapper change={change}>
       <FormBox onSubmit={handleSubmit(onSubmit)}>
         <p>{change ? "Dark Theme" : ""}</p>

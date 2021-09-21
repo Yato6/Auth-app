@@ -2,10 +2,10 @@ import { createBrowserHistory } from "history";
 
 export const history = createBrowserHistory();
 
-export const logIn = ()  => {
+export const logIn = () => {
   return history.push("/Account");
 };
 
 export const logOut = () => {
-  return history.push("/Login")
-}
+  return history.push("/Login");
+};

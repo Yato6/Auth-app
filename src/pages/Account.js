@@ -4,8 +4,9 @@ import { AccountInfo, AboutAccount } from "./Account.styled";
 const Account = () => {
   return (
     <AccountInfo>
-       <Navbar />
-      <AboutAccount ><p>Информация</p>
+      <Navbar />
+      <AboutAccount>
+        <p>Информация</p>
       </AboutAccount>
     </AccountInfo>
   );
