@@ -1,11 +1,11 @@
-import { logOut } from "../Components/History";
+import { Navbar } from "../Components/Navbar";
 import { AccountInfo, AboutAccount } from "./Account.styled";
 
 const Account = () => {
   return (
     <AccountInfo>
-      <AboutAccount><p>Информация</p>
-      <button onClick={() => logOut()}>Выйти</button>
+       <Navbar />
+      <AboutAccount ><p>Информация</p>
       </AboutAccount>
     </AccountInfo>
   );

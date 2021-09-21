@@ -11,8 +11,8 @@ export const AboutAccount = styled.div`
   left: 35vw;
   top: 10vh;
   padding: 2rem;
-  width: 400px;
-  height: 400px;
+  width: 22vw;
+  height: 44vh;
   border-radius: 5px;
   background: white;
 
@@ -28,7 +28,7 @@ export const AboutAccount = styled.div`
     text-align: center;
   }
 
-  button {
+  /* button {
     position: absolute;
     border: 0;
     background: #d8d8d8;
@@ -50,5 +50,5 @@ export const AboutAccount = styled.div`
     :hover {
       background: #fa5858;
     }
-  }
+  } */
 `;
