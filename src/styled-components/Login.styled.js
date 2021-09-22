@@ -1,14 +1,46 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: ${({ change }) => (change ? "#191919" : "#34495e")};
+  /* background-color: ${({ change }) => (change ? "#34495e" : "#191919")}; */
+  background-color: #d8d8d8;
   width: 100vw;
   height: 100vh;
 `;
 
+export const Loading = styled.div`
+  background: ${({ change }) =>
+      change ? "url(https://holasvg.com/my-loader.svg)" : "none"}
+    no-repeat;
+  height: 100px;
+  width: 150px;
+  align-items: center;
+  position: relative;
+  top: 46vh;
+  left: 47vw;
+
+  @media screen and (min-height: 812px) and (max-width: 375px) {
+    left: 37vw;
+  }
+
+  p {
+    margin: 0;
+    position: relative;
+    top: 12vh;
+    left: 0.7vw;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+
+    @media screen and (min-height: 812px) and (max-width: 375px) {
+      left: 3vw;
+    }
+  }
+`;
+
 export const FormBox = styled.form`
+  display: ${({ change }) => (change ? "none" : "")};
   font-family: "Courier New", Courier, monospace;
-  width: 95.4vw;
+  width: 30vw;
   padding: 40px;
   position: absolute;
   top: 50vh;
@@ -16,6 +48,7 @@ export const FormBox = styled.form`
   transform: translate(-50%, -50%);
   background: #191919;
   text-align: center;
+  border-radius: 25px;
 
   @media screen and (min-height: 812px) and (max-width: 375px) {
     width: 295px;
