@@ -7,7 +7,8 @@ export const onSubmit = (data) => {
       axios.get("./users.json").then((res) => {
         if (
           data.username === res.data[0].login &&
-            data.password === res.data[0].password) {
+          data.password === res.data[0].password
+        ) {
           logIn();
         } else {
           alert("Такого пользователя не существует!");
