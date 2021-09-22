@@ -23,10 +23,6 @@ export const Navigation = styled.nav`
       color: white;
       cursor: pointer;
 
-      :Link {
-        color: white;
-      }
-
       :hover {
         color: #ff00ff;
       }
