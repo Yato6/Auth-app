@@ -2,7 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { logIn } from "../Components/History";
-import { FormBox, Switch, Wrapper } from "./Login.styled";
+import { Wrapper, FormBox, Switch } from "../styled-components/Login.styled";
+
 const Login = () => {
   const {
     register,
@@ -10,18 +11,20 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    axios.get("./users.json").then((res) => {
-      if (
-        data.username === res.data[0].login &&
-        data.password === res.data[0].password
-      ) {
-        logIn();
-      } else {
-        alert("Такого пользователя, не существует");
-      }
-    });
-  };
+const onSubmit = (data) => {
+  axios.get("./users.json").then((res) => {
+    if (
+      (data.username === res.data[0].login &&
+        data.password === res.data[0].password) ||
+      (data.username === res.data[1].login &&
+        data.password === res.data[1].password)
+    ) {
+      logIn();
+    } else {
+      alert("Такого пользователя, не существует");
+    }
+  });
+};
 
   const [change, setChange] = useState(false);
 
@@ -50,7 +53,6 @@ const Login = () => {
           placeholder="Имя пользователя"
         />
         {errors.username && <i>Введите имя пользователя!</i>}
-
         <input
           {...register("password", { required: true })}
           type="password"

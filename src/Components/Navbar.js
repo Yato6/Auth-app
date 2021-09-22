@@ -1,5 +1,5 @@
 import { logOut } from "../Components/History";
-import { Navigation } from "./Navbar.styled";
+import { Navigation } from "../styled-components/Navbar.styled";
 
 export const Navbar = () => {
   return (

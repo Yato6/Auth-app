@@ -17,10 +17,15 @@ export const Navigation = styled.nav`
 
     li {
       padding: 15px 15px 15px;
-      cursor: pointer;
       font-size: 16px;
-      -moz-transition: all 0.3s 0.01s ease;
+      transition: all 0.3s 0.01s ease;
       -webkit-transition: all 0.3s 0.01s ease;
+      color: white;
+      cursor: pointer;
+
+      :Link {
+        color: white;
+      }
 
       :hover {
         color: #ff00ff;
