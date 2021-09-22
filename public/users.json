@@ -2,9 +2,5 @@
     {
         "login": "vlad",
         "password": "123"
-    },
-    {
-        "login": "admin",
-        "password": "222"
     }
 ]
