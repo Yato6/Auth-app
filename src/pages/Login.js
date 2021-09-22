@@ -11,20 +11,20 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-const onSubmit = (data) => {
-  axios.get("./users.json").then((res) => {
-    if (
-      (data.username === res.data[0].login &&
-        data.password === res.data[0].password) ||
-      (data.username === res.data[1].login &&
-        data.password === res.data[1].password)
-    ) {
-      logIn();
-    } else {
-      alert("Такого пользователя, не существует");
-    }
-  });
-};
+  const onSubmit = (data) => {
+    axios.get("./users.json").then((res) => {
+      if (
+        (data.username === res.data[0].login &&
+          data.password === res.data[0].password) ||
+        (data.username === res.data[1].login &&
+          data.password === res.data[1].password)
+      ) {
+        logIn();
+      } else {
+        alert("Такого пользователя, не существует");
+      }
+    });
+  };
 
   const [change, setChange] = useState(false);
 

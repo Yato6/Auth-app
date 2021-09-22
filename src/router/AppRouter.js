@@ -1,5 +1,4 @@
-import { Redirect, Router } from "react-router";
-import { Route, Switch } from "react-router";
+import { Redirect, Router, Route, Switch } from "react-router";
 import Account from "../pages/Account";
 import Login from "../pages/Login";
 import { history } from "../Components/History";
