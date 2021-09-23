@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  /* background-color: ${({ change }) => (change ? "#34495e" : "#191919")}; */
-  background-color: #d8d8d8;
+  background-color: #191919;
   width: 100vw;
   height: 100vh;
 `;
