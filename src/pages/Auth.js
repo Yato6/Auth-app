@@ -4,7 +4,7 @@ import { logIn } from "../Components/History";
 import { Wrapper, FormBox, Loading } from "../styled-components/Login.styled";
 import axios from "axios";
 
-const Auth = (data) => {
+const Auth = () => {
   const {
     register,
     handleSubmit,
@@ -25,16 +25,15 @@ const Auth = (data) => {
             logIn();
           }, 2300);
         } else {
-          alert("такого пользователя, не существует!");
           setLoading("Error");
         }
       });
-    } catch (e) {}
+    } catch (e) {
+      console.log("Ошибка:");
+    }
   }
 
   const [loading, setLoading] = useState("uncompleted");
-  console.log(loading);
-  // console.log(change)
 
   return (
     <Wrapper>
@@ -42,7 +41,8 @@ const Auth = (data) => {
         <p>Загрузка</p>
       </Loading>
       <FormBox
-        change={loading === "completed"}
+        change={loading === "Error"}
+        hidden={loading === "completed"}
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1>Login</h1>

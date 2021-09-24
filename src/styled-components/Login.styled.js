@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: #191919;
+  background-color: #1c1c1c;
   width: 100vw;
   height: 100vh;
 `;
@@ -37,7 +37,6 @@ export const Loading = styled.div`
 `;
 
 export const FormBox = styled.form`
-  display: ${({ change }) => (change ? "none" : "")};
   font-family: "Courier New", Courier, monospace;
   width: 30vw;
   padding: 40px;
@@ -46,6 +45,8 @@ export const FormBox = styled.form`
   left: 50vw;
   transform: translate(-50%, -50%);
   background: #191919;
+  border: ${({ change }) =>
+    change ? "5px solid #DF013A" : "5px solid #FFFFFF"};
   text-align: center;
   border-radius: 25px;
 

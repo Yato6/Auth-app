@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Navigation = styled.nav`
   background-color: black;
@@ -11,9 +12,9 @@ export const Navigation = styled.nav`
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
 
-    /* @media screen and (min-height: 812px) and (max-width: 375px) {
+    @media screen and (min-height: 812px) and (max-width: 375px) {
       padding: 0;
-    } */
+    }
 
     li {
       padding: 15px 15px 15px;
@@ -24,14 +25,14 @@ export const Navigation = styled.nav`
       cursor: pointer;
 
       :hover {
-        color: #ff00ff;
+        color: #df013a;
       }
 
-      /* @media screen and (min-height: 812px) and (max-width: 375px) {
+      @media screen and (min-height: 812px) and (max-width: 375px) {
         margin-left: 0;
         padding: 15px 6px 15px;
         font-size: 13px;
-      } */
+      }
     }
   }
 
@@ -51,15 +52,26 @@ export const Navigation = styled.nav`
     cursor: pointer;
     color: black;
 
-    /* @media screen and (min-height: 812px) and (max-width: 375px) {
+    @media screen and (min-height: 812px) and (max-width: 375px) {
       width: 29vw;
       height: 5vh;
       left: 70vw;
-        top: 0.73vh;
-    } */
+      top: 0.73vh;
+    }
 
     :hover {
       background: #fa5858;
     }
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s 0.01s ease;
+  -webkit-transition: all 0.3s 0.01s ease;
+
+  :hover {
+    color: #ff00ff;
   }
 `;
