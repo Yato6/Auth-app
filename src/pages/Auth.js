@@ -24,7 +24,10 @@ const Auth = () => {
           setTimeout(() => {
             logIn();
           }, 2300);
-        } else {
+        } else if (
+          data.username !== res.data.login &&
+          data.password !== res.data.password
+        ) {
           setLoading("Error");
         }
       });
@@ -42,6 +45,9 @@ const Auth = () => {
       </Loading>
       <FormBox
         change={loading === "Error"}
+        onChange={(e) => {
+          setLoading(e.target.value);
+        }}
         hidden={loading === "completed"}
         onSubmit={handleSubmit(onSubmit)}
       >
