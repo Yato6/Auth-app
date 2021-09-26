@@ -3,6 +3,11 @@ import {
   WeatherPage,
   AboutWeather,
   FormSearch,
+  City,
+  Now,
+  Temp,
+  FeelsLike,
+  WeatherData,
 } from "../styled-components/Weather.styled";
 import { Navbar } from "../Components/Navbar";
 import axios from "axios";
@@ -19,32 +24,41 @@ function Weather() {
   const [value, setValue] = useState("");
   const [formIsVisible, setVisible] = useState(false);
 
-  const getWeather = (city) => {
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city},ru/en&APPID=${API}&units=metric&lang=ru`
-      )
-      .then((res) => {
-        setData({
-          weather: res.data.weather[0].description,
-          city: res.data.name,
-          temp: Math.round(res.data.main.temp),
-          feels_like: Math.round(res.data.main.feels_like),
+  function getWeather(city) {
+    try {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city},ru/en&APPID=${API}&units=metric&lang=ru`
+        )
+        .then((res) => {
+          setData({
+            weather: res.data.weather[0].description,
+            city: res.data.name,
+            temp: Math.round(res.data.main.temp),
+            feels_like: Math.round(res.data.main.feels_like),
+          });
+          if (value === city) {
+            setVisible(true);
+          } else {
+            setVisible(false);
+          }
         });
-      })
-      .catch(() => {
-        if (!data.city) {
-          setVisible(false);
-          alert("такого города, не существует");
-        }
-      });
-  };
+    } catch (e) {}
+  }
 
   return (
     <WeatherPage>
       <Navbar />
       <AboutWeather>
-        <FormSearch>
+        <FormSearch
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (value.trim() !== "") {
+              getWeather(value);
+              setValue("");
+            }
+          }}
+        >
           <input
             placeholder="введите город..."
             value={value}
@@ -53,7 +67,30 @@ function Weather() {
             }}
           ></input>
         </FormSearch>
-        <button>Найти</button>
+        <button
+          onClick={() => {
+            if (value.trim() !== "") {
+              setValue("");
+              getWeather(value);
+            }
+          }}
+        >
+          Найти
+        </button>
+        <WeatherData hidden={formIsVisible === false}>
+          <City>
+            <p>Город: {data.city}</p>
+          </City>
+          <Now>
+            <p>Сейчас: {data.weather}</p>
+          </Now>
+          <Temp>
+            <p>Температура: {data.temp}°C</p>
+          </Temp>
+          <FeelsLike>
+            <p>Ощущается как: {data.feels_like}°C</p>
+          </FeelsLike>
+        </WeatherData>
       </AboutWeather>
     </WeatherPage>
   );

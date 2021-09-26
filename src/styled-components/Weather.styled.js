@@ -25,7 +25,6 @@ export const AboutWeather = styled.div`
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-weight: 500;
     cursor: pointer;
-    text-align: center;
   }
 
   button {
@@ -36,14 +35,14 @@ export const AboutWeather = styled.div`
     background: #f2f2f2;
     border-radius: 4px;
     border: 1px solid #f2f2f2;
-    top: 20vh;
+    top: 35vh;
     left: 8vw;
     cursor: pointer;
   }
 `;
 
 export const FormSearch = styled.form`
-  top: 15vh;
+  top: 33vh;
   position: relative;
   left: 3vw;
 
@@ -55,3 +54,30 @@ export const FormSearch = styled.form`
     padding-left: 10px;
   }
 `;
+
+
+export const WeatherData = styled.div `
+position: relative;
+bottom: 6vh;
+`
+
+export const City = styled.div `
+background-color: royalblue;
+height: 5vh;
+`
+
+export const Now = styled.div `
+background-color: rosybrown;
+height: 5vh;
+`
+
+export const Temp = styled.div `
+background-color: blanchedalmond;
+height: 5vh;
+`
+export const FeelsLike = styled.div `
+background-color: coral;
+height: 5vh;
+`
+
+
