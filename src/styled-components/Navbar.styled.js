@@ -9,6 +9,7 @@ export const Navigation = styled.nav`
     list-style: none;
     color: #fff;
     margin-top: 0;
+    margin-bottom: 0;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
 
@@ -23,10 +24,6 @@ export const Navigation = styled.nav`
       -webkit-transition: all 0.3s 0.01s ease;
       color: white;
       cursor: pointer;
-
-      :hover {
-        color: #df013a;
-      }
 
       @media screen and (min-height: 812px) and (max-width: 375px) {
         margin-left: 0;
@@ -72,6 +69,6 @@ export const StyledLink = styled(Link)`
   -webkit-transition: all 0.3s 0.01s ease;
 
   :hover {
-    color: #ff00ff;
+    color: #fa5858;
   }
 `;

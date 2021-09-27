@@ -5,7 +5,7 @@ export const Navbar = () => {
   return (
     <Navigation>
       <ul>
-        <li>Главная</li>
+        <li> <StyledLink to={"/Main"}>Главная</StyledLink></li>
         <li>
           <StyledLink to={"/Account"}>Информация</StyledLink>
         </li>

@@ -81,9 +81,11 @@ function Weather() {
         </button>
         <WeatherData hidden={formIsVisible === false}>
           <City>
-           <p>{data.city}, {data.weather}</p>
-           <p>{data.temp}°C</p>
-           <p>{data.feels_like}°C</p>
+            <p>
+              {data.city}, {data.weather}
+            </p>
+            <p>{data.temp}°C</p>
+            <p>{data.feels_like}°C</p>
           </City>
         </WeatherData>
       </AboutWeather>
