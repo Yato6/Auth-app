@@ -25,31 +25,33 @@ function Weather() {
   const [formIsVisible, setVisible] = useState(false);
 
   function getWeather(city) {
-    try {
-      axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city},ru/en&APPID=${API}&units=metric&lang=ru`
-        )
-        .then((res) => {
-          setData({
-            weather: res.data.weather[0].description,
-            city: res.data.name,
-            temp: Math.round(res.data.main.temp),
-            feels_like: Math.round(res.data.main.feels_like),
-          });
-          if (value === city) {
-            setVisible(true);
-          } else {
-            setVisible(false);
-          }
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city},ru/en&APPID=${API}&units=metric&lang=ru`
+      )
+      .then((res) => {
+        setData({
+          weather: res.data.weather[0].description,
+          city: res.data.name,
+          temp: Math.round(res.data.main.temp),
+          feels_like: Math.round(res.data.main.feels_like),
         });
-    } catch (e) {}
+        if (value === city) {
+          setVisible(true);
+        }
+      })
+      .catch((e) => {
+        if (!data.city) {
+          alert("Такого города, не существует!");
+        }
+      });
   }
 
   return (
     <WeatherPage>
       <Navbar />
       <AboutWeather>
+        <p>Weather Page</p>
         <FormSearch
           onSubmit={(e) => {
             e.preventDefault();
@@ -79,17 +81,10 @@ function Weather() {
         </button>
         <WeatherData hidden={formIsVisible === false}>
           <City>
-            <p>Город: {data.city}</p>
+           <p>{data.city}, {data.weather}</p>
+           <p>{data.temp}°C</p>
+           <p>{data.feels_like}°C</p>
           </City>
-          <Now>
-            <p>Сейчас: {data.weather}</p>
-          </Now>
-          <Temp>
-            <p>Температура: {data.temp}°C</p>
-          </Temp>
-          <FeelsLike>
-            <p>Ощущается как: {data.feels_like}°C</p>
-          </FeelsLike>
         </WeatherData>
       </AboutWeather>
     </WeatherPage>

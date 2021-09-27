@@ -10,7 +10,6 @@ export const AboutAccount = styled.div`
   position: relative;
   left: 35vw;
   top: 10vh;
-  padding: 2rem;
   width: 22vw;
   height: 44vh;
   border-radius: 5px;
@@ -22,10 +21,10 @@ export const AboutAccount = styled.div`
   }
 
   p {
+    padding: 2rem;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-weight: 500;
     cursor: pointer;
-    text-align: center;
   }
 
   /* button {

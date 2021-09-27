@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { logIn } from "../Components/History";
-import { Wrapper, FormBox, Loading } from "../styled-components/Login.styled";
+import { Wrapper, FormBox, Loading } from "../styled-components/Auth.styled";
 import axios from "axios";
 
 const Auth = () => {
