@@ -68,6 +68,11 @@ export const StyledLink = styled(Link)`
   transition: all 0.3s 0.01s ease;
   -webkit-transition: all 0.3s 0.01s ease;
 
+  button {
+    position: relative;
+    left: 50vw;
+  }
+
   :hover {
     color: #fa5858;
   }

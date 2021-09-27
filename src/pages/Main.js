@@ -5,6 +5,7 @@ import {
   AnnouncedList,
   EmptyContent,
   FifthPopularAnime,
+  FirstAnnouncedAnime,
   FirstPopularAnime,
   FourthPopularAnime,
   PopularAnimeList,
@@ -18,7 +19,10 @@ const Main = () => {
       <Navbar />
       <AboutMain>
         <AnnouncedList>
-          <h1>Анонсировано</h1>
+          <h1>//Анонсировано//</h1>
+          <FirstAnnouncedAnime>
+            <span>Блич: Тысячалетняя кровавая война</span>
+          </FirstAnnouncedAnime>
         </AnnouncedList>
 
         <EmptyContent></EmptyContent>

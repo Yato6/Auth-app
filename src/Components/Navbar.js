@@ -5,11 +5,12 @@ export const Navbar = () => {
   return (
     <Navigation>
       <ul>
-        <li> <StyledLink to={"/Main"}>Главная</StyledLink></li>
         <li>
-          <StyledLink to={"/Account"}>Информация</StyledLink>
+          <StyledLink to={"/Main"}>Главная</StyledLink>
         </li>
-        <li>Личный Кабинет</li>
+        <li>
+          <StyledLink to={"/Account"}>Личный Кабинет</StyledLink>
+        </li>
         <li>
           <StyledLink to={"/Weather"}>Погода</StyledLink>
         </li>

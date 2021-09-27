@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const WeatherPage = styled.div`
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
-  
+  background: rgba(0, 0, 0, 0.4);
 `;
 
 export const AboutWeather = styled.div`
@@ -27,6 +26,14 @@ export const AboutWeather = styled.div`
     font-weight: 500;
     cursor: pointer;
     padding: 2rem;
+    color: #585858;
+
+    :after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: #d8d8d8;
+    }
   }
 
   button {
@@ -61,19 +68,18 @@ export const WeatherData = styled.div`
   position: relative;
   bottom: 6vh;
   padding: 0;
-
 `;
 
 export const City = styled.div`
   background-color: #e6e6e6;
   height: 15vh;
 
-
   p {
     top: 1.3vh;
     position: relative;
     text-align: center;
     padding: 0;
+    color: black;
   }
 `;
 

@@ -40,7 +40,7 @@ function Weather() {
           setVisible(true);
         }
       })
-      .catch((e) => {
+      .catch(() => {
         if (!data.city) {
           alert("Такого города, не существует!");
         }
@@ -51,7 +51,7 @@ function Weather() {
     <WeatherPage>
       <Navbar />
       <AboutWeather>
-        <p>Weather Page</p>
+        <p>Weather page</p>
         <FormSearch
           onSubmit={(e) => {
             e.preventDefault();

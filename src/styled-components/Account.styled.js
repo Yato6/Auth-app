@@ -3,16 +3,16 @@ import styled from "styled-components";
 export const AccountInfo = styled.div`
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
 `;
 
 export const AboutAccount = styled.div`
   position: relative;
   left: 35vw;
   top: 10vh;
-  width: 22vw;
-  height: 44vh;
-  border-radius: 5px;
+  width: 26vw;
+  height: 54vh;
+  border-radius: 10px;
   background: white;
 
   @media screen and (min-height: 812px) and (max-width: 375px) {
@@ -25,6 +25,14 @@ export const AboutAccount = styled.div`
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-weight: 500;
     cursor: pointer;
+    color: #585858;
+
+    :after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: #d8d8d8;
+    }
   }
 
   /* button {

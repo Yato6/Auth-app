@@ -6,7 +6,7 @@ const Account = () => {
     <AccountInfo>
       <Navbar />
       <AboutAccount>
-        <p>Информация</p>
+        <p>Account page</p>
       </AboutAccount>
     </AccountInfo>
   );
