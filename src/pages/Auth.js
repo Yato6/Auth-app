@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { logIn } from "../Components/History";
 import { Wrapper, FormBox, Loading } from "../styled-components/Auth.styled";
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
 const Auth = () => {
   const {
@@ -10,6 +11,7 @@ const Auth = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [cookies, setCookie] = useCookies(["user"]);
 
   function onSubmit(data) {
     try {
@@ -21,6 +23,7 @@ const Auth = () => {
             data.password === res.data[1].password)
         ) {
           setLoading("completed");
+          setCookie("user", data.username, { path: "/" });
           setTimeout(() => {
             logIn();
           }, 2300);
@@ -31,9 +34,7 @@ const Auth = () => {
           setLoading("Error");
         }
       });
-    } catch (e) {
-      console.log("Ошибка:");
-    }
+    } catch (e) {}
   }
 
   const [loading, setLoading] = useState("uncompleted");
