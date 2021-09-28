@@ -20,12 +20,12 @@ export const AboutAccount = styled.div`
     left: 12vw;
   }
 
-  h2 {
+  h3 {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: #000000;
     position: relative;
-    left: 1vw;
-    bottom: 3vh;
+    left: 5vw;
+    
   }
 
   p {

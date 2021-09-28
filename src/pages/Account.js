@@ -10,7 +10,7 @@ const Account = (user) => {
         <Navbar />
         <AboutAccount>
           <p>Account page</p>
-          <h2>Добро пожаловать, {cookie.user}</h2>
+          <h3>Добро пожаловать, {cookie.user}</h3>
         </AboutAccount>
       </AccountInfo>
     );
