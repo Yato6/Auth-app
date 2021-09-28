@@ -4,9 +4,6 @@ import {
   AboutWeather,
   FormSearch,
   City,
-  Now,
-  Temp,
-  FeelsLike,
   WeatherData,
 } from "../styled-components/Weather.styled";
 import { Navbar } from "../Components/Navbar";
@@ -84,8 +81,8 @@ function Weather() {
             <p>
               {data.city}, {data.weather}
             </p>
-            <p>{data.temp}°C</p>
-            <p>{data.feels_like}°C</p>
+            <p>Температура, {data.temp}°C</p>
+            <p>Ощущается как, {data.feels_like}°C</p>
           </City>
         </WeatherData>
       </AboutWeather>

@@ -7,6 +7,7 @@ export const WeatherPage = styled.div`
 `;
 
 export const AboutWeather = styled.div`
+  justify-content: space-between;
   position: relative;
   left: 35vw;
   top: 10vh;
@@ -65,52 +66,26 @@ export const FormSearch = styled.form`
 `;
 
 export const WeatherData = styled.div`
+  width: 15vw;
   position: relative;
   bottom: 6vh;
-  padding: 0;
+  left: 5vw;
+  text-align: center;
 `;
 
 export const City = styled.div`
-  background-color: #e6e6e6;
+  border-radius: 10px;
   height: 15vh;
 
   p {
     top: 1.3vh;
     position: relative;
-    text-align: center;
     padding: 0;
     color: black;
-  }
-`;
+    background-color: #eeeeee;
 
-// export const Now = styled.div`
-//   background-color: rosybrown;
-//   height: 5vh;
-
-//   p {
-//     top: 1.3vh;
-//     position: relative;
-//     text-align: center;
-//   }
-// `;
-
-export const Temp = styled.div`
-  background-color: blanchedalmond;
-  height: 5vh;
-
-  p {
-    top: 1.3vh;
-    position: relative;
-    text-align: center;
-  }
-`;
-export const FeelsLike = styled.div`
-  background-color: coral;
-  height: 5vh;
-
-  p {
-    top: 1.3vh;
-    position: relative;
-    text-align: center;
+    :after {
+      width: 0px;
+    }
   }
 `;

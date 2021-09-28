@@ -34,28 +34,4 @@ export const AboutAccount = styled.div`
       background-color: #d8d8d8;
     }
   }
-
-  /* button {
-    position: absolute;
-    border: 0;
-    background: #d8d8d8;
-    display: block;
-    bottom: 5%;
-    text-align: center;
-    left: 10.2vw;
-    border: none;
-    padding: 14px 40px;
-    outline: none;
-    color: white;
-    transition: 0.25s;
-    cursor: pointer;
-
-    @media screen and (min-height: 812px) and (max-width: 375px) {
-      left: 22vw;
-    }
-
-    :hover {
-      background: #fa5858;
-    }
-  } */
 `;

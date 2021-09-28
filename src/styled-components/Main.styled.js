@@ -25,7 +25,7 @@ export const AnnouncedList = styled.div`
   }
 
   span {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     display: block;
     font-weight: 400;
     font-size: 18px;
@@ -35,24 +35,45 @@ export const AnnouncedList = styled.div`
 
 export const FirstAnnouncedAnime = styled.div`
   text-align: center;
-  color: #ffd500;
+  color: #ffffff;
   cursor: pointer;
   background-image: url("https://moe.shikimori.one/system/animes/original/41467.jpg?1625678190");
   background-size: 100%;
   overflow: hidden;
 
-  /* :hover {
-    transform: rotate(0deg) scale(1.1, 1.1);
-    transition: transform 300ms linear 0ms, box-shadow 300ms linear 0ms,
-      z-index 300ms linear 0ms;
-  } */
+  :hover {
+    color: #ffd500;
+  }
 `;
 
 export const EmptyContent = styled.div`
-  margin-top: 10vh;
-  height: 500px;
+  height: 730px;
   width: calc(100vw - 100px);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
+`;
+
+export const InsideEmpty = styled.div`
+  position: relative;
+  top: 14vh;
+  left: 21vw;
+  width: 26vw;
+  height: 54vh;
+  border-radius: 10px;
+  background-color: white;
+
+  p {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    padding: 2rem;
+    font-weight: 500;
+    color: #585858;
+
+    :after {
+      content: "";
+      display: block;
+      height: 0.6px;
+      background-color: #d8d8d8;
+    }
+  }
 `;
 
 export const PopularAnimeList = styled.div`
