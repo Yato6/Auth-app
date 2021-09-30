@@ -7,9 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Loading = styled.div`
-  background: ${({ change }) =>
-      change ? "url(https://holasvg.com/my-loader.svg)" : "none"}
-    no-repeat;
+  background: url(https://holasvg.com/my-loader.svg) no-repeat;
   height: 100px;
   width: 150px;
   align-items: center;
@@ -82,20 +80,26 @@ export const FormBox = styled.form`
     }
   }
 
+  a {
+    color: white;
+
+    :hover {
+      color: #2e2efe;
+    }
+  }
+
   i {
     color: #610808;
-    font-weight: 500;
+    font-size: 18px;
   }
 
   h1 {
     color: white;
-    text-transform: uppercase;
     font-weight: 500;
   }
 
   h2 {
     color: white;
-    text-transform: uppercase;
     font-weight: 400;
   }
 

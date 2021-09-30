@@ -1,11 +1,20 @@
-[
-    {
-        "login": "Vladislav",
-        "password": "123"
-    },
-    {
-        "login": "admin",
-        "password": "222"
-    }
-
-]
+{
+    "users":[
+        {
+            "login": "Vladislav",
+            "password": "123"
+        },
+        {
+            "login": "vlad",
+            "password": "222"
+        },
+        {
+            "login": "admin",
+            "password": "111"
+        },
+        {
+            "login": "afro",
+            "password": "444"
+        }
+    ]
+}
