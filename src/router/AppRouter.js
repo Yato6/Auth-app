@@ -4,7 +4,6 @@ import Auth from "../pages/Auth";
 import { history } from "../Components/History";
 import Weather from "../pages/Weather";
 
-
 const AppRouter = () => {
   return (
     <Router history={history}>

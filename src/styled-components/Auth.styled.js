@@ -1,9 +1,92 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: #1c1c1c;
+  background: rgba(0, 0, 0, 0.4);
   width: 100vw;
   height: 100vh;
+
+  button {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    position: absolute;
+    top: 20vh;
+    left: 47vw;
+    background: none;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    :hover {
+      color: #2e2efe;
+    }
+  }
+`;
+
+export const RegistrationForm = styled.form`
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  background-color: #e8e8e8;
+  top: 50vh;
+  width: 30vw;
+  left: 50vw;
+  border: 5px solid #ffffff;
+  text-align: center;
+
+  h2 {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: #000000;
+    font-weight: 400;
+  }
+
+  i {
+    color: #fe2e2e;
+    font-size: 16px;
+    padding: 0;
+  }
+
+  input[type="text"],
+  [type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 6px;
+    transition: 0.25s;
+
+    ::placeholder {
+      color: #a4a4a4;
+    }
+  }
+
+  input[type="text"]:focus,
+  [type="password"]:focus {
+    width: 240px;
+    border-color: #a4a4a4;
+  }
+
+  input[type="submit"] {
+    border: 0;
+    background: none;
+    border: 1px solid #bdbdbd;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    color: #000000;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background: #bdbdbd;
+  }
 `;
 
 export const Loading = styled.div`
@@ -35,73 +118,35 @@ export const Loading = styled.div`
 `;
 
 export const FormBox = styled.form`
-  font-family: "Courier New", Courier, monospace;
   width: 30vw;
   padding: 40px;
   position: absolute;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  background: #191919;
+  background: #e8e8e8;
   border: ${({ change }) =>
-    change ? "5px solid #8A0829" : "5px solid #FFFFFF"};
+    change ? "4px solid #fe2e2e" : "4px solid #e8e8e8"};
   text-align: center;
-  border-radius: 25px;
 
   @media screen and (min-height: 812px) and (max-width: 375px) {
     width: 295px;
   }
 
-  p {
-    color: white;
-    font-size: small;
-    font-weight: 500;
-    position: absolute;
-    left: 56vw;
-    top: 4vh;
-
-    @media screen and (min-height: 812px) and (max-width: 375px) {
-      left: 75vw;
-      top: 4vh;
-    }
-  }
-
-  span {
-    position: absolute;
-    font-weight: 500;
-    left: 60.5vw;
-    top: 4.4vh;
-    color: red;
-    font-size: small;
-
-    @media screen and (min-height: 812px) and (max-width: 375px) {
-      left: 87vw;
-      top: 4vh;
-    }
-  }
-
-  a {
-    color: white;
-
-    :hover {
-      color: #2e2efe;
-    }
-  }
-
   i {
-    color: #610808;
+    color: #fe2e2e;
     font-size: 18px;
   }
 
   h3 {
-    color: #8A0829;
+    color: #fe2e2e;
     font-weight: 500;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   }
 
   h2 {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: white;
+    color: #000000;
     font-weight: 400;
   }
 
@@ -116,9 +161,12 @@ export const FormBox = styled.form`
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: white;
     border-radius: 6px;
     transition: 0.25s;
+
+    ::placeholder {
+      color: #a4a4a4;
+    }
   }
 
   input[type="text"]:focus,
@@ -133,16 +181,16 @@ export const FormBox = styled.form`
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 1px solid #a93167;
+    border: 1px solid #bdbdbd;
     padding: 14px 40px;
     outline: none;
-    color: white;
+    color: #000000;
     transition: 0.25s;
     cursor: pointer;
   }
 
   input[type="submit"]:hover {
-    background: #a93167;
+    background: #bdbdbd;
   }
 `;
 

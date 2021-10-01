@@ -25,7 +25,6 @@ export const AboutAccount = styled.div`
     color: #000000;
     position: relative;
     left: 5vw;
-    
   }
 
   p {
