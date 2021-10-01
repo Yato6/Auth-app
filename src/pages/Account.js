@@ -4,7 +4,7 @@ import { AccountInfo, AboutAccount } from "../styled-components/Account.styled";
 
 
 const Account = ({history}) => {
-  const [cookie] = useCookies(["user"]);
+  const [cookies] = useCookies(["user"]);
   const redirect = () => history.push('/Auth');
 
   const user = (user) => {
@@ -14,7 +14,7 @@ const Account = ({history}) => {
           <Navbar />
           <AboutAccount>
             <p>Account page</p>
-            <h3>Добро пожаловать, {cookie.user}</h3>
+            <h3>Добро пожаловать, {cookies.user}</h3>
           </AboutAccount>
         </AccountInfo>
       );
@@ -22,7 +22,7 @@ const Account = ({history}) => {
       redirect()
     }
   };
-  return <div>{user(cookie.user)}</div>;
+  return <>{user(cookies.user)}</>;
 }
 
 export default Account;

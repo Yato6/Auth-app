@@ -39,7 +39,7 @@ export const Navigation = styled.nav`
     background: #d8d8d8;
     display: block;
     left: 90vw;
-    top: 1vh;
+    top: 0.8vh;
     text-align: center;
     border: none;
     padding: 14px 40px;

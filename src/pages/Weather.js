@@ -22,7 +22,7 @@ function Weather({ history }) {
   const [value, setValue] = useState("");
   const [formIsVisible, setVisible] = useState(false);
   const redirect = () => history.push("/Auth");
-  const [cookie] = useCookies(["user"]);
+  const [cookies] = useCookies(["user"]);
 
   function getWeather(city) {
     axios
@@ -97,7 +97,7 @@ function Weather({ history }) {
     }
   };
 
-  return <>{user(cookie.user)}</>;
+  return <>{user(cookies.user)}</>;
 }
 
 export default Weather;

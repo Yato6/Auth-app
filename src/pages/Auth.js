@@ -11,7 +11,7 @@ const Auth = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [cookies, setCookie] = useCookies(["user"]);
+  const [cookies, setCookies] = useCookies(["user"]);
   const [loading, setLoading] = useState("uncompleted");
   const [state, setState] = useState(false);
 
@@ -21,8 +21,7 @@ const Auth = () => {
         res.data.users.forEach((i) => {
           if (data.username === i.login && data.password === i.password) {
             setLoading("completed");
-            console.log(data.username);
-            setCookie("user", data.username, { path: "/" });
+            setCookies("user", data.username, { path: "/" });
             setTimeout(() => {
               logIn();
             }, 1500);
@@ -49,8 +48,13 @@ const Auth = () => {
         hidden={loading === "completed"}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h1>Login</h1>
+        {state === true
+        ?
+        <h3>Неверное имя пользователя или пароль!</h3>
+        :
         <h2>Авторизация</h2>
+        }
+
         <input
           {...register("username", { required: true })}
           type="text"
@@ -63,7 +67,7 @@ const Auth = () => {
           placeholder="Пароль"
         />
         {errors.password && <i>Пожалуйста, введите пароль</i>}
-        <input type="submit" value="Войти"></input>
+        <input type="submit" value="Войти" />
       </FormBox>
     </Wrapper>
   );

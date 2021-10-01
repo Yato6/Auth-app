@@ -44,7 +44,7 @@ export const FormBox = styled.form`
   transform: translate(-50%, -50%);
   background: #191919;
   border: ${({ change }) =>
-    change ? "5px solid #DF013A" : "5px solid #FFFFFF"};
+    change ? "5px solid #8A0829" : "5px solid #FFFFFF"};
   text-align: center;
   border-radius: 25px;
 
@@ -93,12 +93,14 @@ export const FormBox = styled.form`
     font-size: 18px;
   }
 
-  h1 {
-    color: white;
+  h3 {
+    color: #8A0829;
     font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   }
 
   h2 {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: white;
     font-weight: 400;
   }
@@ -144,47 +146,47 @@ export const FormBox = styled.form`
   }
 `;
 
-export const Switch = styled.div`
-  position: absolute;
-  top: 7.5vh;
-  left: 53.5vw;
+// export const Switch = styled.div`
+//   position: absolute;
+//   top: 7.5vh;
+//   left: 53.5vw;
 
-  @media screen and (min-height: 812px) and (max-width: 375px) {
-    left: 66vw;
-    top: 8vh;
-  }
+//   @media screen and (min-height: 812px) and (max-width: 375px) {
+//     left: 66vw;
+//     top: 8vh;
+//   }
 
-  input[type="checkbox"] {
-    position: relative;
-    width: 50px;
-    height: 20px;
-    -webkit-appearance: none;
-    outline: none;
-    background: #636363;
-    border-radius: 20px;
-    transition: 0.5s;
-  }
+//   input[type="checkbox"] {
+//     position: relative;
+//     width: 50px;
+//     height: 20px;
+//     -webkit-appearance: none;
+//     outline: none;
+//     background: #636363;
+//     border-radius: 20px;
+//     transition: 0.5s;
+//   }
 
-  input:checked[type="checkbox"] {
-    background: #3a5070;
-  }
+//   input:checked[type="checkbox"] {
+//     background: #3a5070;
+//   }
 
-  input[type="checkbox"]:before {
-    cursor: pointer;
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    transform: scale(1.1);
-    border-radius: 50%;
-    background: #d1d1d1;
-    left: 0;
-    transition: 0.5s;
-  }
+//   input[type="checkbox"]:before {
+//     cursor: pointer;
+//     content: "";
+//     position: absolute;
+//     width: 20px;
+//     height: 20px;
+//     transform: scale(1.1);
+//     border-radius: 50%;
+//     background: #d1d1d1;
+//     left: 0;
+//     transition: 0.5s;
+//   }
 
-  input:checked[type="checkbox"]:before {
-    cursor: pointer;
-    background: #5386d4;
-    left: 29px;
-  }
-`;
+//   input:checked[type="checkbox"]:before {
+//     cursor: pointer;
+//     background: #5386d4;
+//     left: 29px;
+//   }
+// `;
