@@ -8,8 +8,9 @@ import {
 } from "../styled-components/Weather.styled";
 import { Navbar } from "../Components/Navbar";
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
-function Weather() {
+function Weather({ history }) {
   const [data, setData] = useState({
     city: "",
     temp: "",
@@ -20,6 +21,8 @@ function Weather() {
   const API = "d66b09610a9b8b08f74f0704cf59ba05";
   const [value, setValue] = useState("");
   const [formIsVisible, setVisible] = useState(false);
+  const redirect = () => history.push("/Auth");
+  const [cookie] = useCookies(["user"]);
 
   function getWeather(city) {
     axios
@@ -43,51 +46,58 @@ function Weather() {
         }
       });
   }
+  const user = (user) => {
+    if (user) {
+      return (
+        <WeatherPage>
+          <Navbar />
+          <AboutWeather>
+            <p>Weather page</p>
+            <FormSearch
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (value.trim() !== "") {
+                  getWeather(value);
+                  setValue("");
+                }
+              }}
+            >
+              <input
+                placeholder="введите город..."
+                value={value}
+                onChange={(e) => {
+                  setValue(e.target.value);
+                }}
+              ></input>
+            </FormSearch>
+            <button
+              onClick={() => {
+                if (value.trim() !== "") {
+                  setValue("");
+                  getWeather(value);
+                }
+              }}
+            >
+              Найти
+            </button>
+            <WeatherData hidden={formIsVisible === false}>
+              <City>
+                <p>
+                  {data.city}, {data.weather}
+                </p>
+                <p>Температура, {data.temp}°C</p>
+                <p>Ощущается как, {data.feels_like}°C</p>
+              </City>
+            </WeatherData>
+          </AboutWeather>
+        </WeatherPage>
+      );
+    } else {
+      redirect();
+    }
+  };
 
-  return (
-    <WeatherPage>
-      <Navbar />
-      <AboutWeather>
-        <p>Weather page</p>
-        <FormSearch
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (value.trim() !== "") {
-              getWeather(value);
-              setValue("");
-            }
-          }}
-        >
-          <input
-            placeholder="введите город..."
-            value={value}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-          ></input>
-        </FormSearch>
-        <button
-          onClick={() => {
-            if (value.trim() !== "") {
-              setValue("");
-              getWeather(value);
-            }
-          }}
-        >
-          Найти
-        </button>
-        <WeatherData hidden={formIsVisible === false}>
-          <City>
-            <p>
-              {data.city}, {data.weather}
-            </p>
-            <p>Температура, {data.temp}°C</p>
-            <p>Ощущается как, {data.feels_like}°C</p>
-          </City>
-        </WeatherData>
-      </AboutWeather>
-    </WeatherPage>
-  );
+  return <>{user(cookie.user)}</>;
 }
 
 export default Weather;

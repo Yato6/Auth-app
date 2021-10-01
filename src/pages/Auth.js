@@ -64,7 +64,6 @@ const Auth = () => {
         />
         {errors.password && <i>Пожалуйста, введите пароль</i>}
         <input type="submit" value="Войти"></input>
-        <a href="/">регистрация</a>
       </FormBox>
     </Wrapper>
   );
