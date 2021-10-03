@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: rgba(0, 0, 0, 0.4);
+  background: #9c9c9e;
   width: 100vw;
   height: 100vh;
 
   button {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     position: absolute;
-    top: 20vh;
+    top: 18vh;
     left: 47vw;
     background: none;
     font-size: 16px;
@@ -17,6 +17,10 @@ export const Wrapper = styled.div`
     border: none;
     :hover {
       color: #2e2efe;
+    }
+
+    @media screen and (min-height: 812px) and (max-width: 375px) {
+      left: 37vw;
     }
   }
 `;
@@ -30,8 +34,12 @@ export const RegistrationForm = styled.form`
   top: 50vh;
   width: 30vw;
   left: 50vw;
-  border: 5px solid #ffffff;
+  border: 5px solid #e8e8e8;
   text-align: center;
+
+  @media screen and (min-height: 812px) and (max-width: 375px) {
+    width: 295px;
+  }
 
   h2 {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;

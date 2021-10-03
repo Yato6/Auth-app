@@ -23,8 +23,8 @@ const Auth = () => {
 
   async function onSubmit(data) {
     try {
-      await axios.get("./users.json").then((res) => {
-        res.data.users.forEach((i) => {
+      await axios.get("http://localhost:8000/users").then((res) => {
+        res.data.forEach((i) => {
           if (data.username === i.login && data.password === i.password) {
             setLoading("completed");
             setCookies("user", data.username, { path: "/" });
@@ -37,14 +37,24 @@ const Auth = () => {
         });
       });
     } catch (e) {
-      console.log("Ошибка: ");
+      console.log(e);
     }
   }
 
-  async function onRegistration() {
+  async function onRegistration(data) {
     try {
-      await axios.post("./users.json").then((res) => {});
-    } catch (e) {}
+      if (data.createPassword === data.confirmPassword) {
+        await axios.post("http://localhost:8000/users", {
+          login: data.createUsername,
+          password: data.confirmPassword,
+        });
+        setIsVisible(false);
+      } else {
+        alert("пароли не совпадают!");
+      }
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   return (
@@ -77,11 +87,13 @@ const Auth = () => {
               type="password"
               placeholder="Придумайте пароль"
             ></input>
+            {errors.createPassword && <i>Обязательное поле</i>}
             <input
               {...register("confirmPassword", { required: true })}
               type="password"
               placeholder="Подтвердите пароль"
             ></input>
+            {errors.confirmPassword && <i>Обязательное поле</i>}
             <input type="submit"></input>
           </RegistrationForm>
         </>
