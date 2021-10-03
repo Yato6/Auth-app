@@ -30,7 +30,6 @@ const Auth = () => {
         res.data.forEach((i) => {
           if (data.username === i.login && data.password === i.password) {
             setLoading("completed");
-            console.log(res);
             setCookies("user", data.username, { path: "/" });
             setTimeout(() => {
               logIn();
@@ -112,7 +111,6 @@ const Auth = () => {
 
             <input
               {...register("createUsername", {
-                required: true,
                 minLength: { value: 3, message: "минимум 3 символа!" },
               })}
               required
@@ -125,7 +123,6 @@ const Auth = () => {
             {/* {errors.createUsername && <i>Обязательное поле</i>} */}
             <input
               {...register("createPassword", {
-                required: true,
                 minLength: { value: 3, message: "минимум 3 символа!" },
               })}
               required
@@ -138,7 +135,6 @@ const Auth = () => {
             <input
               {...register("confirmPassword", {
                 minLength: {
-                  required: true,
                   value: 3,
                   message: "минимум 3 символа!",
                 },
@@ -150,7 +146,7 @@ const Auth = () => {
             {errors.confirmPassword?.message && (
               <i>{errors.confirmPassword?.message}</i>
             )}
-            <input type="submit" onClick={() => {}}></input>
+            <input type="submit"></input>
           </RegistrationForm>
         </>
       ) : (
