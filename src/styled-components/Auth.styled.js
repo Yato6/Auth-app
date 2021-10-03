@@ -8,10 +8,10 @@ export const Wrapper = styled.div`
   button {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     position: absolute;
-    top: 18vh;
-    left: 47vw;
+    top: 16vh;
+    left: 46.4vw;
     background: none;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     cursor: pointer;
     border: none;
@@ -46,7 +46,6 @@ export const RegistrationForm = styled.form`
     color: #000000;
     font-weight: 400;
   }
-
   i {
     color: #fe2e2e;
     font-size: 16px;
@@ -94,6 +93,27 @@ export const RegistrationForm = styled.form`
 
   input[type="submit"]:hover {
     background: #bdbdbd;
+  }
+`;
+
+export const Completed = styled.div`
+  svg {
+    position: absolute;
+    top: 35vh;
+    left: 47.3vw;
+    width: 100px;
+    height: 100px;
+  }
+
+  p {
+    margin: 0;
+    position: absolute;
+    top: 48vh;
+    left: 47.1vw;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
 `;
 
