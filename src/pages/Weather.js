@@ -9,8 +9,9 @@ import {
 import { Navbar } from "../Components/Navbar";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import { logOut } from "../Components/History";
 
-function Weather({ history }) {
+function Weather() {
   const [data, setData] = useState({
     city: "",
     temp: "",
@@ -21,7 +22,6 @@ function Weather({ history }) {
   const API = "d66b09610a9b8b08f74f0704cf59ba05";
   const [value, setValue] = useState("");
   const [formIsVisible, setVisible] = useState(false);
-  const redirect = () => history.push("/Auth");
   const [cookies] = useCookies(["user"]);
 
   function getWeather(city) {
@@ -93,7 +93,7 @@ function Weather({ history }) {
         </WeatherPage>
       );
     } else {
-      redirect();
+      logOut();
     }
   };
 

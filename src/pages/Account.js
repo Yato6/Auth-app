@@ -1,10 +1,10 @@
 import { useCookies } from "react-cookie";
+import { logOut } from "../Components/History";
 import { Navbar } from "../Components/Navbar";
 import { AccountInfo, AboutAccount } from "../styled-components/Account.styled";
 
-const Account = ({ history }) => {
+const Account = () => {
   const [cookies] = useCookies(["user"]);
-  const redirect = () => history.push("/Auth");
 
   const user = (user) => {
     if (user) {
@@ -18,7 +18,7 @@ const Account = ({ history }) => {
         </AccountInfo>
       );
     } else {
-      redirect();
+      logOut();
     }
   };
   return <>{user(cookies.user)}</>;

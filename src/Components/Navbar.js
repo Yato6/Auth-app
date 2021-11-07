@@ -6,6 +6,9 @@ export const Navbar = () => {
     <Navigation>
       <ul>
         <li>
+          <StyledLink to={"/Main"}>Главная</StyledLink>
+        </li>
+        <li>
           <StyledLink to={"/Account"}>Личный Кабинет</StyledLink>
         </li>
         <li>

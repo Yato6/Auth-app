@@ -24,7 +24,7 @@ export const AboutAccount = styled.div`
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: #000000;
     position: relative;
-    left: 5vw;
+    left: 2vw;
   }
 
   p {

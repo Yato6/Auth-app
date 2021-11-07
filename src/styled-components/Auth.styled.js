@@ -147,7 +147,6 @@ export const Loading = styled.div`
 
 export const FormBox = styled.form`
   width: 30vw;
-  padding: 40px;
   position: absolute;
   top: 50vh;
   left: 50vw;
@@ -183,7 +182,7 @@ export const FormBox = styled.form`
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     text-align: center;
     border: 2px solid #3498db;
     padding: 14px 10px;

@@ -4,6 +4,21 @@
       "login": "Vladislav",
       "password": "444",
       "id": 1
+    },
+    {
+      "login": "steve.jobs@example.com",
+      "password": "password",
+      "id": 2
+    },
+    {
+      "login": "zxc",
+      "password": "zxc",
+      "id": 3
+    },
+    {
+      "login": "Vlad",
+      "password": "222",
+      "id": 4
     }
   ]
 }

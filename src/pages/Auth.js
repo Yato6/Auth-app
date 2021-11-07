@@ -1,76 +1,13 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { logIn } from "../Components/History";
-import {
-  Wrapper,
-  FormBox,
-  Loading,
-  RegistrationForm,
-  Completed,
-} from "../styled-components/Auth.styled";
-import axios from "axios";
-import { useCookies } from "react-cookie";
+import { Wrapper, Loading, Completed } from "../styled-components/Auth.styled";
+import RegForm from "./RegistrationForm";
+import AuthForm from "./AuthForm";
 
 const Auth = () => {
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm();
-  const [cookies, setCookies] = useCookies(["user"]);
   const [loading, setLoading] = useState("uncompleted");
   const [state, setState] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [registration, setRegistration] = useState("");
-
-  async function onSubmit(data) {
-    try {
-      await axios.get("http://localhost:8000/users").then((res) => {
-        res.data.forEach((i) => {
-          if (data.username === i.login && data.password === i.password) {
-            setLoading("completed");
-            setCookies("user", data.username, { path: "/" });
-            setTimeout(() => {
-              logIn();
-            }, 1700);
-          } else {
-            setState(true);
-          }
-        });
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  async function onRegistration(data) {
-    try {
-      if (data.createPassword === data.confirmPassword) {
-        await axios
-          .post("http://localhost:8000/users", {
-            login: data.createUsername,
-            password: data.confirmPassword,
-          })
-          .then(() => {
-            setTimeout(() => {
-              setRegistration("successfully");
-            }, 1500);
-            setTimeout(() => {
-              setIsVisible(false);
-              setRegistration("");
-              setValue("createUsername", "");
-              setValue("createPassword", "");
-              setValue("confirmPassword", "");
-            }, 3000);
-          });
-      } else {
-        alert("Пароли не совпадают!");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  }
 
   return (
     <Wrapper>
@@ -103,85 +40,23 @@ const Auth = () => {
             </svg>
             <p>Успешно!</p>
           </Completed>
-          <RegistrationForm
-            onSubmit={handleSubmit(onRegistration)}
-            hidden={registration === "successfully"}
-          >
-            <h2>Регистрация</h2>
-
-            <input
-              {...register("createUsername", {
-                minLength: { value: 3, message: "минимум 3 символа!" },
-              })}
-              required
-              type="text"
-              placeholder="Имя пользователя"
-            ></input>
-            {errors.createUsername?.message && (
-              <i>{errors.createUsername?.message}</i>
-            )}
-            {/* {errors.createUsername && <i>Обязательное поле</i>} */}
-            <input
-              {...register("createPassword", {
-                minLength: { value: 3, message: "минимум 3 символа!" },
-              })}
-              required
-              type="password"
-              placeholder="Придумайте пароль"
-            ></input>
-            {errors.createPassword?.message && (
-              <i>{errors.createPassword?.message}</i>
-            )}
-            <input
-              {...register("confirmPassword", {
-                minLength: {
-                  value: 3,
-                  message: "минимум 3 символа!",
-                },
-              })}
-              required
-              type="password"
-              placeholder="Подтвердите пароль"
-            ></input>
-            {errors.confirmPassword?.message && (
-              <i>{errors.confirmPassword?.message}</i>
-            )}
-            <input type="submit"></input>
-          </RegistrationForm>
+          <RegForm
+            registration={registration}
+            setRegistration={setRegistration}
+            setIsVisible={setIsVisible}
+          />
         </>
       ) : (
         <>
           <Loading hidden={loading === "uncompleted"}>
             <p>Загрузка</p>
           </Loading>
-          <FormBox
-            change={state === true}
-            onChange={(e) => {
-              setState(e.target.value);
-            }}
-            hidden={loading === "completed"}
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            {state === true ? (
-              <h3>Неверное имя пользователя или пароль!</h3>
-            ) : (
-              <h2>Авторизация</h2>
-            )}
-
-            <input
-              {...register("username", { required: true })}
-              type="text"
-              placeholder="Имя пользователя"
-            />
-            {errors.username && <i>Пожалуйста, введите имя пользователя</i>}
-            <input
-              {...register("password", { required: true })}
-              type="password"
-              placeholder="Пароль"
-            />
-            {errors.password && <i>Пожалуйста, введите пароль</i>}
-            <input type="submit" value="Войти" />
-          </FormBox>
+          <AuthForm
+            state={state}
+            setState={setState}
+            loading={loading}
+            setLoading={setLoading}
+          />
         </>
       )}
     </Wrapper>
