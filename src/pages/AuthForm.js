@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useForm } from "react-hook-form";
+import { axiosInstance } from "../Components/Api";
 import { logIn } from "../Components/History";
 import { FormBox } from "../styled-components/Auth.styled";
 
@@ -14,21 +14,27 @@ const AuthForm = (props) => {
 
   async function onSubmit(data) {
     try {
-      await axios.get("http://localhost:8000/users").then((res) => {
-        res.data.forEach((i) => {
-          if (data.username === i.login && data.password === i.password) {
-            props.setLoading("completed");
-            setCookies("user", data.username, { path: "/" });
-            setTimeout(() => {
-              logIn();
-            }, 1700);
-          } else {
-            setTimeout(() => {
-              props.setState(true);
-            }, 500);
-          }
+      await axiosInstance
+        .get("/users", {
+          login: data.login,
+          password: data.password,
+        })
+        .then((res) => {
+          res.data.forEach((i) => {
+            if (data.username === i.login && data.password === i.password) {
+              props.setLoading("completed");
+              setCookies("user", data.username, { path: "/" });
+              localStorage.setItem("token", res.data.accessToken);
+              setTimeout(() => {
+                logIn();
+              }, 1600);
+            } else {
+              setTimeout(() => {
+                props.setState(true);
+              }, 500);
+            }
+          });
         });
-      });
     } catch (e) {
       console.log(e);
     }

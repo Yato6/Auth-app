@@ -118,7 +118,7 @@ export const Completed = styled.div`
 `;
 
 export const Loading = styled.div`
-  background: url(https://holasvg.com/my-loader.svg) no-repeat;
+  background: url("https://loaders.holasvg.com/my-loader.svg") no-repeat;
   height: 100px;
   width: 150px;
   align-items: center;

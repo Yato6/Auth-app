@@ -1,7 +1,10 @@
 import { logOut } from "../Components/History";
 import { Navigation, StyledLink } from "../styled-components/Navbar.styled";
+import { Cookies, useCookies } from "react-cookie";
 
 export const Navbar = () => {
+  const [cookies] = useCookies(["user"]);
+
   return (
     <Navigation>
       <ul>
@@ -15,7 +18,14 @@ export const Navbar = () => {
           <StyledLink to={"/Weather"}>Погода</StyledLink>
         </li>
       </ul>
-      <button onClick={() => logOut()}>Выйти</button>
+      <button
+        onClick={() => {
+          logOut();
+          localStorage.removeItem("token");
+        }}
+      >
+        Выйти
+      </button>
     </Navigation>
   );
 };

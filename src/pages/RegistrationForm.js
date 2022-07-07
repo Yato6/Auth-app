@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useForm } from "react-hook-form";
+import { axiosInstance } from "../Components/Api";
 import { RegistrationForm } from "../styled-components/Auth.styled";
 
 const RegForm = (props) => {
@@ -13,8 +13,8 @@ const RegForm = (props) => {
   async function onRegistration(data) {
     try {
       if (data.createPassword === data.confirmPassword) {
-        await axios
-          .post("http://localhost:8000/users", {
+        await axiosInstance
+          .post("/users", {
             login: data.createUsername,
             password: data.confirmPassword,
           })

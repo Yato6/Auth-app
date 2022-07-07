@@ -20,8 +20,8 @@ import {
 const Main = () => {
   const [cookie] = useCookies(["user"]);
   const [state, setState] = useState(false);
-  const user = (user) => {
-    if (user) {
+  const user = () => {
+    if (localStorage.token) {
       return (
         <>
           <Navbar />

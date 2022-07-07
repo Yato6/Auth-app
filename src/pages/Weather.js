@@ -46,8 +46,8 @@ function Weather() {
         }
       });
   }
-  const user = (user) => {
-    if (user) {
+  const user = () => {
+    if (localStorage.token) {
       return (
         <WeatherPage>
           <Navbar />

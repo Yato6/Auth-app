@@ -22,11 +22,12 @@
     "run": "^1.4.0",
     "styled-components": "^5.3.1",
     "swiper": "^7.0.8",
+    "swr": "^1.3.0",
     "typescript": "^4.4.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"npm:watch-node\"",
+    "start": "concurrently \"react-scripts --openssl-legacy-provider start\" \"npm:watch-node\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
