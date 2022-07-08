@@ -52,7 +52,7 @@ const AuthForm = (props) => {
       {props.state === true ? (
         <h3>Неверное имя пользователя или пароль!</h3>
       ) : (
-        <h2>Авторизация</h2>
+        <h2>Sign in</h2>
       )}
 
       <input

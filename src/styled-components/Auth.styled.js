@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: #9c9c9e;
-  width: 100vw;
+  background-color: #1f2029;
   height: 100vh;
+  width: 100vw;
 
   button {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     position: absolute;
     top: 16vh;
     left: 46.4vw;
@@ -30,20 +29,29 @@ export const RegistrationForm = styled.form`
   text-align: center;
   padding: 20px;
   transform: translate(-50%, -50%);
-  background-color: #e8e8e8;
+  background-color: #2a2b38;
+  background-size: 300%;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");
   top: 50vh;
-  width: 30vw;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  width: 25%;
   left: 50vw;
-  border: 5px solid #e8e8e8;
   text-align: center;
-
+  border-radius: 6px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-family: "Poppins", sans-serif;
   @media screen and (min-height: 812px) and (max-width: 375px) {
     width: 295px;
   }
 
   h2 {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: #000000;
+    color: #c4c3ca;
     font-weight: 400;
   }
   i {
@@ -65,8 +73,10 @@ export const RegistrationForm = styled.form`
     outline: none;
     border-radius: 6px;
     transition: 0.25s;
+    color: #ffffff;
 
     ::placeholder {
+      font-family: "Poppins", sans-serif;
       color: #a4a4a4;
     }
   }
@@ -80,19 +90,19 @@ export const RegistrationForm = styled.form`
   input[type="submit"] {
     border: 0;
     background: none;
-    border: 1px solid #bdbdbd;
     display: block;
     margin: 20px auto;
     text-align: center;
+    border: 1px solid #bdbdbd;
     padding: 14px 40px;
     outline: none;
-    color: #000000;
+    color: #ffffff;
     transition: 0.25s;
     cursor: pointer;
   }
-
   input[type="submit"]:hover {
     background: #bdbdbd;
+    color: #000;
   }
 `;
 
@@ -146,23 +156,35 @@ export const Loading = styled.div`
 `;
 
 export const FormBox = styled.form`
-  width: 30vw;
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  background: #e8e8e8;
-  border: ${({ change }) =>
-    change ? "4px solid #fe2e2e" : "4px solid #e8e8e8"};
+  position: relative;
   text-align: center;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  background-color: #2a2b38;
+  background-size: 300%;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");
+  top: 50vh;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  width: 25%;
+  left: 50vw;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
 
   @media screen and (min-height: 812px) and (max-width: 375px) {
     width: 295px;
   }
 
   i {
+    font-family: "Poppins", sans-serif;
     color: #fe2e2e;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   h3 {
@@ -172,8 +194,8 @@ export const FormBox = styled.form`
   }
 
   h2 {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: #000000;
+    font-family: "Poppins", sans-serif;
+    color: #c4c3ca;
     font-weight: 400;
   }
 
@@ -190,9 +212,10 @@ export const FormBox = styled.form`
     outline: none;
     border-radius: 6px;
     transition: 0.25s;
+    color: #ffffff;
 
     ::placeholder {
-      color: #a4a4a4;
+      color: #d4d4d4;
     }
   }
 
@@ -211,13 +234,14 @@ export const FormBox = styled.form`
     border: 1px solid #bdbdbd;
     padding: 14px 40px;
     outline: none;
-    color: #000000;
+    color: #ffffff;
     transition: 0.25s;
     cursor: pointer;
   }
 
   input[type="submit"]:hover {
     background: #bdbdbd;
+    color: #000;
   }
 `;
 

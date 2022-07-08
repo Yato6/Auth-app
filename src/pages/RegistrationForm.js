@@ -41,7 +41,7 @@ const RegForm = (props) => {
       onSubmit={handleSubmit(onRegistration)}
       hidden={props.registration === "successfully"}
     >
-      <h2>Регистрация</h2>
+      <h2>Sign up</h2>
 
       <input
         {...register("createUsername", {
